@@ -164,9 +164,9 @@ class GitHub(object):
             params['state'] = state
 
         url = self.auth_url + 'authorize?' + urlencode(params)
-        _logger.debug("Redirecting to %s", url)
-        return redirect(url)
-
+        _logger.debug("returning authorization url %s", url)
+        return url
+    
     def authorized_handler(self, f):
         """
         Decorator for the route that is used as the callback for authorizing
